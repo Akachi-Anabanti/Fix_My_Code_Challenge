@@ -8,6 +8,9 @@ class square:
     __height = 0
 
     def __init__(self, *args, **kwargs):
+        if ("width" not in kwargs.keys() or "height"
+                not in kwargs.keys()):
+            raise AttributeError("Please provide both height and width")
         for key, value in kwargs.items():
             setattr(self, key, value)
 
